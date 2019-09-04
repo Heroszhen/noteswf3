@@ -1,0 +1,30 @@
+<div id="tchat">
+	<div id="border">
+		<div id="header">
+			<div>
+				<i (click)="killtime()" [routerLink]="['/autres']" class="fas fa-globe-africa"></i>
+				<i (click)="killtime();showbm()" [routerLink]="['/']" class="fas fa-home"></i>
+				<i class="fas fa-user-friends"></i>
+			</div>
+		</div>
+		<div id="main">
+			<div>
+				<div id="messages">
+					<div *ngFor="let item of chat">
+						<small>({{item.thetime}})</small><b>{{item.user}}</b> : {{item.content}}
+					</div>
+				</div>
+				<div id="register">
+					<input [(ngModel)]="message" type="text"><br>
+					<div>
+						<button (click)="addComment()">Envoyer</button>
+					</div>
+				</div>
+			</div>
+			<div>
+				<img src="http://www.boutique-cherry-rocher.com/img/cms/produits-description/citron-vert.jpg" alt="">
+				<img src="http://dwightcarter.edublogs.org/files/2013/09/talk-about-it-2ex59ki.png" alt="">
+			</div>
+		</div>
+	</div>
+</div>

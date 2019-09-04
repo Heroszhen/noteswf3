@@ -1,0 +1,25 @@
+<div *ngIf="bm!='none'">
+	<header id="app">
+    <p>WEBFORCE3</p>
+  </header>
+  <nav id="app">
+    <input type="checkbox" id="panel" name="panel" style="display:none;">
+    <label for="panel" id="appmenu"><i class="fas fa-align-justify"></i></label>
+    <ul id="listmenu">
+      <li><button [routerLink]="['/accueil']" routerLinkActive="active-link">ACCUEIL</button></li>
+      <li><button [routerLink]="['/hc']">HTML/CSS</button></li>
+      <li><button [routerLink]="['/js']">JAVASCRIPT</button></li>
+      <li><button [routerLink]="['/php']">PHP</button></li>
+      <li><button [routerLink]="['/phppoo']">POO</button></li>
+      <!--
+      <li><button [routerLink]="['/portfolio']">Portfolio</button></li>
+      -->
+      <li *ngIf="!connexion"><button [routerLink]="['/singin']">Connexion</button></li>
+      <li *ngIf="!connexion"><button [routerLink]="['/singup']">Inscription</button></li>
+      <li *ngIf="connexion"><button (click)="logout()">Déconnexion</button></li>
+      <li><button [routerLink]="['/autres']">Services</button></li>
+    </ul>
+  </nav>
+</div>
+
+<router-outlet></router-outlet>

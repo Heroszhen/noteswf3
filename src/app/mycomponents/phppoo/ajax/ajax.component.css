@@ -1,0 +1,147 @@
+#ajax, a{
+	font-family: "Gill Sans", sans-serif;
+	color:rgb(77,9,103);
+}
+#ajax header{
+	position:fixed;
+	top:0;
+	width:100%;
+	background:rgb(211,162,229);
+	display:flex;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+header>div:nth-child(1){
+	width:10%;
+	margin-left:10px;
+	font-size:40px;
+	display:flex;
+	align-items:center;
+}
+
+header>div:nth-child(1):hover{
+	cursor:pointer;
+	color:rgb(138,16,184);
+}
+
+header>div:nth-child(2){
+	width:80%;
+	text-align:center;
+}
+header>div:nth-child(3){
+	width:10%;
+	font-size:40px;
+	align-items:center;
+	margin-right:5px;
+	display:none;
+}
+
+header>div:nth-child(3):hover{
+	cursor:pointer;
+	color:rgb(138,16,184);
+}
+
+#ajax>div{
+	margin-top:60px;
+	display:flex;
+}
+
+#ajax nav{
+	position:fixed;
+	top:65px;
+	color:rgb(77,9,103);
+	width:13%;
+	height:100%;
+}
+
+#ajax nav>ul{
+	padding:5px;
+	width:95%;
+	border:5px solid rgb(121,13,162);
+	background:rgb(211,162,229);
+}
+#ajax nav>ul:nth-child(1),#ajax nav>ul:nth-child(2),#ajax nav>ul:nth-child(3){
+	border-bottom:none;
+	
+}
+#ajax ul li ul li{
+	margin-left:20px;
+	color:rgb(77,9,103);
+	margin-top:10px;
+	display:none;
+}
+
+#ajax nav>ul:hover li ul li{
+	display:block;
+}
+
+#ajax  ul li a{
+	color:rgb(77,9,103);
+}
+
+#ajax  ul li a:hover {
+	cursor:pointer;
+	color:rgb(138,16,184);
+	font-weight:bold;
+}
+#ajax  ul li.active{
+	background:#FF00FF;
+	text-align:center;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+#ajax  ul li.active a{
+	color:rgb(138,16,184);
+	font-weight:bold;
+}
+
+#ajax #content>div{
+	width:85%;
+	margin-left:15%;
+	box-sizing:border-box;
+	padding:20px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+#ajax #content>div>section{
+	display:none;
+}
+
+#ajax #content>div>section.show{
+	display:block;
+}
+
+@media (max-width:959px){
+	#ajax nav{
+		width:18%;
+	}
+	#ajax #content>div{
+		width:83%;
+		margin-left:21%;
+	}
+}
+
+@media (max-width:770px){
+	header>div:nth-child(3){
+		display:flex;
+	}
+	
+	#ajax nav{
+		width:99.99%;
+		position:absolute;
+		z-index:2;
+		position:fixed;
+		background:rgb(0,0,0,0.6);
+		display:none;
+	}
+	#ajax nav>ul{
+		width:50%;
+	}
+	#ajax #content>div{
+		width:99%;
+		margin-left:0;
+	}
+}

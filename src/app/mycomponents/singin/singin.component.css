@@ -1,0 +1,19 @@
+#singin .container{
+    margin:0 auto;
+    margin-top:50px;
+    width:50%; 
+    font-size:30px;
+}
+#singin .container input{
+    width:95%;
+    margin-bottom:20px;
+    border-radius:5px;
+}
+#singin .container p.text-danger{
+    margin-top:20px;
+    color:red;
+}
+#singin .container button{
+    background-color:blue;
+    border-radius:20px;
+}

@@ -1,0 +1,104 @@
+<div id="portfolio">
+	
+	<nav>
+		<input type="checkbox" id="mynav">
+		<label for="mynav"><i class="fas fa-mobile-alt"></i></label>
+		<ul>		
+			<li><a (click)="changeActived('accueil')" [ngClass]="{'active': actived==''||actived=='accueil'}">Accueil</a></li>
+			<li><a (click)="changeActived('about')" [ngClass]="{'active': actived=='about'}">About Me</a></li>
+			<li><a (click)="changeActived('skill')" [ngClass]="{'active': actived=='skill'}">Skills</a></li>
+			<li><a (click)="changeActived('folio')" [ngClass]="{'active': actived=='folio'}">Folio</a></li>
+			<li><a (click)="changeActived('contact')" [ngClass]="{'active': actived=='contact'}">Contact</a></li>
+			<li><a (click)="showbm()" [routerLink]="['']">Back</a></li>
+		</ul>
+	</nav>
+	
+	<main>
+		<section id="accueil"  [ngClass]="{'show': actived==''||actived=='accueil'}">
+			<div class="mybody">
+				<p>
+					Hi , I am Zhen
+				</p>
+			</div>
+		</section>
+		<section id="about"  [ngClass]="{'show':actived=='about'}">
+			<div class="mybody">
+				<div>
+					<h2>About Me</h2>
+					<div id="introduction">
+						<div>
+							<h4>Mes études</h4>
+							Bac s : LMA<br>
+							Cap en restaurant : AFPA<br>
+							Licence en informatique : université Pierre-et-Marie-Curie<br>
+							Formation "Développeur Intégrateur Web" : web force 3
+						</div>
+						<div>
+							<h4>Mes expériences professionnelles</h4>
+							Cassier<br>
+							Employé de libre service<br>
+							Serveur
+						</div>
+					</div>
+				</div>	
+			</div>
+		</section>
+		<section id="skill"  [ngClass]="{'show':actived=='skill'}">
+			<div class="mybody">
+				<h2>Mes compétences</h2>
+				<div>HTML/CSS<br><progress value="80" max="100"></progress></div> 
+				<div>Bootstrap<br><progress value="70" max="100"></progress></div> 
+				<div>JAVASCRIPT<br><progress value="80" max="100"></progress></div> 
+				<div>Angular<br><progress value="80" max="100"></progress></div> 
+				<div>PHP<br><progress value="70" max="100"></progress></div> 
+				<div>Symfony<br><progress value="50" max="100"></progress></div>
+				<div>JAVA<br><progress value="70" max="100"></progress></div> 
+			</div>
+		</section>
+		<section id="folio"  [ngClass]="{'show':actived=='folio'}">
+			<div class="mybody">
+				<div>
+					<img src="assets/images/twitterupmc.png" alt="">
+					<p>
+						C'est un site de type réseaux sociaux que j'ai créé en licence. Nous pouvons y créer des comptes, poser des messages et des commentaires , modifier le profil et ajouter et supprimer des amis.(HTML/CSS,JS,JDBC)
+					</p>
+				</div>
+				<div>
+					<img src="assets/images/ad.png" alt="">
+					<p>
+						C'est un site que j'ai créé pour contempler la déesse Alexandra Daddario. Nous pouvons y créer des comptes, regarder ses images , ses films et ses videos et laisser des commentaires.(HTML/CSS,Jquery,php)
+					</p>
+				</div>
+				<div>
+					<img src="https://www.alticreation.com/uploads/iceberg-front-end-back-end-developers.jpg" alt="">
+					<p>
+						Front-end web development is the practice of converting data to graphical interface for user to view and interact with data through digital interaction. 
+					</p>
+				</div>
+				<div>
+					<img src="https://www.alticreation.com/uploads/iceberg-front-end-back-end-developers.jpg" alt="">
+					<p>
+						Front-end web development is the practice of converting data to graphical interface for user to view and interact with data through digital interaction. 
+					</p>
+				</div>
+			</div>
+		</section>
+				<!--
+			<section id="pcontact">
+				<div class="mybody">
+					<form>
+						<label for="name">Nom</label><br>
+						<input type="text" id="name"><br>
+						<label for="email">Mail</label><br>
+						<input type="text" id="email"><br>
+						<label for="comment"> Commentaire: </label><br>
+						<textarea id="comment" name="comment"></textarea>
+					</form>
+					<div>
+						<p>My E-mail: zhen.yang@hotmail.fr</p>
+						<div id="flash"></div>
+					</div>
+				</div>
+			</section>-->
+	</main>
+</div>

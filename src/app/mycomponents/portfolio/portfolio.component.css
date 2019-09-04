@@ -1,0 +1,208 @@
+#portfolio{
+	font-family: Arial, Helvetica, sans-serif;
+	background:linear-gradient(#ccd9ff,#99b3ff,#668cff);
+	height:100vh;
+	display:flex;
+}
+
+#portfolio nav{
+	width:170px;
+}
+
+#portfolio nav label{
+	padding-top:5px;
+	display:block;
+	text-align:right;
+	float:right;
+	margin-right:10px;
+	width:25px;
+	cursor:pointer;
+}
+nav label i{
+	font-size:30px;
+	color:blue;
+}
+#portfolio nav label,#portfolio nav input{
+	display:none;
+}
+#portfolio nav ul{
+	clear:both;
+	overflow:hidden;
+	transition:.5s;
+	height:99%;
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	align-content:space-evenly;
+}
+
+#portfolio nav ul li{
+	width:100%;
+	padding:10px;
+}
+
+#portfolio nav ul li a{
+	padding:5px 15px 5px 15px;
+	background:linear-gradient(#ccd9ff,#99b3ff,#668cff);
+	box-shadow: 6px 7px 5px 0px rgba(0,0,0,0.75);
+	transition:1s;
+	display:block;
+	width:120px;
+	text-align:center;
+}
+
+#portfolio nav ul li a:hover{
+	color:white;
+}
+
+#portfolio nav ul li a.active{
+	box-shadow:none;
+	color:white;
+}
+
+
+
+/*main*/
+#portfolio  main{
+	width:100%;
+	height:100vh;
+}
+#portfolio main section,#portfolio main section .mybody{
+	height:100vh;
+	color:white;
+}
+#portfolio section{
+	display:none;
+}
+#portfolio section.show{
+	display:block;
+}
+
+#portfolio #accueil .mybody{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+#portfolio #accueil .mybody p{
+    font-size:10vw;
+    color:	#4d79ff;
+}
+#portfolio #accueil .mybody p:hover{
+    color:	#4da6ff;
+}
+#portfolio #about .mybody,#portfolio #skill .mybody{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#portfolio #about .mybody{
+	padding:40px;
+}
+#portfolio #about h2{
+	margin-bottom:60px;
+	text-align:center;
+}
+#portfolio #about .mybody #introduction{
+	color:rgb(200,200,200);
+}
+#portfolio #about .mybody #introduction>div{
+	margin-bottom:40px;
+	font-size:25px;
+}
+#portfolio #about .mybody #introduction>div:hover{
+	color:white;
+}
+#portfolio #about .mybody h4{
+	color:rgb(230,220,230);
+	margin-bottom:10px;
+}
+
+#portfolio #skill .mybody{
+	flex-wrap: wrap;
+	align-content:space-around;
+}
+
+#portfolio #skill .mybody >div,#portfolio #skill .mybody>h2{
+	width:99%;
+	text-align:center;
+}
+
+#portfolio #skill .mybody progress{
+	width:80%;
+}
+
+#portfolio section#folio .mybody{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: space-evenly;
+	align-content:space-around;
+}
+#portfolio #folio .mybody>div{
+	width:40%;
+	height:45vh;
+	border:1px solid #4dd2ff;
+	border-radius:20px;
+	text-align:center;
+	padding-bottom:3px;
+}
+
+#portfolio #folio .mybody>div img{
+	width:100%;
+	height:70%;
+	border:1px solid #4dd2ff;
+	border-top-left-radius:20px;
+	border-top-right-radius:20px;
+}
+
+
+#portfolio #folio .mybody p{
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:5px;
+	padding-right:5px;
+	text-align:left;
+	font-size:16px;
+}
+@media (max-width:767px){
+	#portfolio{
+		flex-wrap:wrap;
+		min-height:100vh;
+	}
+	#portfolio>nav{
+		width:100%;
+		height:340px;
+	}
+	#portfolio nav label{
+		display:block;
+	}
+	#portfolio nav label:hover{
+		cursor:pointer;
+	}
+	#portfolio nav ul{
+		max-height:0;
+	}
+	#portfolio nav input:checked ~ ul{
+		max-height:85%;
+	}
+	#portfolio>div{
+		min-height:100vh;
+	}
+
+	#portfolio #folio .mybody{
+		justify-content: center;
+	}
+	
+	#portfolio #folio .mybody>div{
+		width:90%;
+		height:auto;
+		margin-bottom:20px;
+	}
+	#portfolio #folio .mybody>div img{
+		width:100%;
+		height:auto;
+	}
+	#portfolio #folio ,#portfolio #folio .mybody{
+		max-height:1170px;
+	}
+}

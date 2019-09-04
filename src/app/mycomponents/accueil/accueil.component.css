@@ -1,0 +1,29 @@
+#mycarou{
+    width:70%;
+    overflow:hidden;
+    margin:0 auto;
+}
+#inner{
+    width:100%;
+    display:flex;/*
+    justify-content: left;
+    position:relative;
+    */
+    justify-content: center;
+      
+}
+
+img{
+    height:calc(100vh - 170px);
+    width:auto;
+}
+
+@media (max-width: 768px) {
+    #mycarou{
+        width:95%;
+    }
+    img{
+        width:100%;
+        height:auto;
+    }
+  }

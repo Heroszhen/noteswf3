@@ -1,0 +1,192 @@
+<div id="php">
+	<nav>
+		<div>
+			<div>
+				<a (click)="showbm()" [routerLink]="['/']"><span>Accueil</span></a>
+				<a (click)="changeActived('sql')" [ngClass]="{'active':actived==''|| actived=='sql'}">SQL</a>
+				<a (click)="changeActived('php')" [ngClass]="{'active': actived=='php'}">PHP</a>
+				<a (click)="changeActived('mysql')" [ngClass]="{'active': actived=='mysql'}">PHP-MySQL</a>
+			</div>
+		</div>
+		<div>
+		</div>
+	</nav>
+	<div>
+		<section [ngClass]="{'show':actived==''|| actived=='sql'}">
+			<div class="content">
+				<div>
+					<div>
+						<h2 class="text-center">PHP</h2>
+						<p class="text-center">formateur : Leclercq Frédéric</p>
+					</div>
+					<br><br>
+					<div>
+						<h3 class="title">SQL</h3>
+						Le SQL (Structured Query Language) est un langage permettant de communiquer avec une base de données. Ce langage informatique est notamment très utilisé par les développeurs web pour communiquer avec les données d’un site web. SQL.sh recense des cours de SQL et des explications sur les principales commandes pour lire, insérer, modifier et supprimer des données dans une base.
+					</div><br><br>
+					<p>
+						use bdd;
+					</p>
+					<p>
+						show tables;
+					</p>
+					<p>
+						select * from table;
+					</p>
+					<p>
+						desc employes;
+					</p>
+					<p>
+						select * from table where colonne1 =val1 and colonne2 = val2;
+					</p>
+					<p>
+						where date between ... and ....;<br>
+						where date = .. or date = ...;
+					</p>
+					<p>
+						where date in ('....','...','....'); = or .. or .. or....<br>
+						where date not in ();		
+					</p>
+					<p>
+						curdate();
+					</p>
+					<p>
+						select * from table where colonne like '%val%';
+					</p>
+					<p>
+						select * from table order by colonne1 desc , colonne2 asclimit 10.5;
+					</p>
+					<p>
+						select count(*) from table;
+					</p>
+					<p>
+						select colonne1, count(*) from table GROUP BY colonne2;
+					</p>
+					<p>
+						insert into table VALUES (val1,val2,val3);
+					</p>
+					<p>
+						update table set colonne = val where colonne2 = val2;
+					</p>
+					<p>
+						replace into table values (val1,val2,val3);
+					</p>
+					<p>
+						delete from table where colonne = val;
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section [ngClass]="{'show':actived=='php'}">
+			<div class="content">
+				<div>
+					<div>
+						<h3 class="title">PHP-bases</h3>
+						<p>
+							echo __FILE__;<br>
+							afficher le chemin courant<br><br>
+
+							echo __LINE__;<br>
+							afficher le nombre de lignes dans le fichier courant<br><br>
+
+							echo iconv_strlen("zhen");<br>
+							afficher le nombre de caractères<br><br>
+
+							echo strpos("abc",'b');<br>
+							afficher la position de b<br><br>
+
+							echo substr("ZHEN est le héros",1,2);<br>
+							extraire une chaine à partir du premier caractère avec une longueur de 2 lettres<br><br>
+
+							echo str_replace("fr",'com',"youtube.fr");<br>
+							remplacé ,remplaçant, la chaîne<br><br>
+
+							function prixSolde($p,$r)&#123;<br>
+								&nbsp;&nbsp;&nbsp;return $p-$p*($r/100);<br>
+							&#125;<br><br>
+							
+							include "exemple.php";<br>
+							include_once("exemple.php");<br>
+							require("exemple.php");<br>  
+							require_once("exemple.php");<br><br>
+
+							$myarray1 = [];<br>
+							$myarray2 = new array('Zhen' => 'le plus grand héros',2=>3);<br>
+							foreach($myarray2 $key => $val)&#123;<br>
+							&nbsp;&nbsp;&nbsp;echo $key." : ".$val;<br>
+							&#125;<br>
+							in_array(val,array);<br>
+							tester si val est contenu dans array<br><br>
+
+							$date2 = new DateTime();<br>
+							echo $date2->format('d/m/y');<br>
+							afficher la date au format français<br><br>
+						</p>
+					</div>
+					<div>
+						<h3 class="title">GET</h3>
+						&lt;a href="page2.php?article=jupe&couleur=blanc&id=7" alt=""&gt;Aller sur la page2&lt;/a&gt;<br>
+						$_GET, $_GET['article'] etc
+					</div>
+					<br><br>
+					<div>
+						<h3 class="title">POST</h3>
+						&lt;form method="post" action=""><br>
+						&nbsp;&nbsp;&nbsp;&lt;label for="prenom"&gt;Prénom&lt;/label&gt;<br>
+						&nbsp;&nbsp;&nbsp;&lt;input type="text" id="prenom" name="prenom" value="<?= $_POST['prenom']??'' ?>"&gt;<br>
+						&nbsp;&nbsp;&nbsp;&lt;input type="submit" value="Envoyer"&gt;<br>
+						&lt;/form&gt;<br>
+					</div>
+					<br><br>
+					<div>
+						<h3 class="title">SESSION</h3>
+						session_start();<br>
+						$_SESSION['pseudo'] = 'Fredo';<br>
+						$_SESSION['email'] = 'abc@gmail.com';<br>
+						var_dump($_SESSION);
+					</div>
+				</div>
+			</div>
+		</section>
+		<section [ngClass]="{'show':actived=='mysql'}">
+			<div class="content">
+				<div>
+					<div id="pdo">
+						<h3 class="title">PDO</h3>
+						<p>
+							$pdo = new PDO("mysql:host=localhost; dbname=entreprise", "root", "", array(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC<br>
+								&nbsp;&nbsp;&nbsp;)<br>
+							);
+						</p>
+					</div>
+					<br><br>
+					<div>
+						<h3 class="title">Requêtes</h3>
+						<div>
+							1. Les séléctions<br>
+							$result = $pdo->query("select * from table");<br>
+							while($tab = $result->fetch())&#123;<br>
+								&nbsp;&nbsp;&nbsp;dump($tab);<br>
+							&#125;<br><br>
+
+							2. Les mises à jour<br>
+							$sql = "update table set colonne = val where colonne2 = val2";<br>
+							$pdo->exec($sql);
+							<br><br>
+
+							3.prepare<br>
+							$sql = "select * from table where colonne = :val";<br>
+							$result = $pdo->prepare($sql);<br>
+							$myarray = array(':val' => myval);<br>
+							$result->execute($myarray);
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>

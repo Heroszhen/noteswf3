@@ -1,0 +1,76 @@
+<div id="autres">
+	<nav>
+		<p (click)="showbm()" [routerLink]="['/']"  class="text-center">
+			Accueil
+		</p>
+		<div class="text-center">
+			<input [(ngModel)]="search" (keyup)="Search()" type="text" placeholder='wf3'>
+			<button><i class="fas fa-search"></i></button>
+		</div>
+	</nav>
+	
+	<div *ngIf="list2.length != 0" id="results">
+		<section id="container1">
+			<div *ngFor="let item of list2">
+				<a (click)="showbm();onglet(item.onglet)" [routerLink]="item.route">
+					{{item.name}}
+				</a>
+			</div>
+		</section>
+	</div>
+	
+	<div id="searchCountry">
+		<h2 class="text-center">Trouver Votre pays</h2><br>
+		<div  class="text-center">
+			<input type="text"  [(ngModel)]="searchCountry" placeholder='pays'>
+			<button><i (click)="SearchCountry()" class="fas fa-globe-americas"></i></button>
+		</div>
+		
+		<div *ngIf="show" id="resultCountry">
+			<div *ngFor="let one of countryFound |keyvalue">
+				<div>
+					<img [src]="one.value.flag" alt="flag">
+				</div>
+				<div>
+					<div>
+						<h4>Noms :</h4>
+						<em *ngFor="let item of one.value.altSpellings">{{item}} ,&nbsp;&nbsp;&nbsp;&nbsp;
+						</em>
+					</div>
+					<div>
+						<h4>Superficie :</h4>
+						<em >{{one.value.area}}</em>
+					</div>
+					<div>
+						<h4>Capitale :</h4>
+						<em>{{one.value.capital}}</em>
+					</div>
+					<div>
+						<h4>Monnaie :</h4>
+						<em>{{one.value.currencies[0].name}} : {{one.value.currencies[0].symbol}}</em>
+					</div>
+					<div>
+						<h4>Langue(s) :</h4>
+						<em *ngFor="let item of one.value.languages">{{item.name}}&nbsp;&nbsp;{{item.nativeName}}<br></em>
+					</div>
+					<div>
+						<h4>Population :</h4>
+						<em >{{one.value.population}}</em>
+					</div>
+					<div>
+						<h4>Continent :</h4>
+						<em >{{one.value.region}} : {{one.value.subregion}}</em>
+					</div>
+					<div>
+						<h4>Fuseau horaire :</h4>
+						<em *ngFor="let item of one.value.timezones">{{item}}<br></em>
+					</div>
+					<div>
+						<h4>Tranductions :</h4>
+						<em *ngFor="let item of one.value.translations |keyvalue">{{item.key}} : {{item.value}}<br></em>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

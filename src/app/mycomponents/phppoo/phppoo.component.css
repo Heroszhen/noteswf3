@@ -1,0 +1,45 @@
+#po{
+	font-family: "Gill Sans", sans-serif;
+	font-size:20px;
+	background:rgb(211,211,211);
+	padding:50px;
+}
+
+#cards{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-evenly;
+}
+
+#cards>div{
+	width:40%;
+	background:white;
+	border:1px solid white;
+	border-radius:10px;
+	margin-bottom:20px;
+}
+#cards img{
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+}
+
+#cards .image{
+	border-bottom:1px solid gray;
+}
+
+#cards .text{
+	padding:10px;
+}
+
+@media (max-width:719px){
+	#po{
+		padding:10px;
+	}
+	#cards{
+		justify-content:center;
+	}
+	#cards>div{
+		width:100%;
+	}
+
+}

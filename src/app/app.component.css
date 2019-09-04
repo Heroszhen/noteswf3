@@ -1,0 +1,63 @@
+header#app{
+    text-align:center;
+    font-family: 'Fugaz One', cursive;
+    padding-top:30px;
+    padding-bottom:30px;
+    font-size:50px;
+}
+
+header#app p:hover{
+    color:gray;
+}
+
+nav#app{
+    padding-top:10px;
+    padding-bottom:10px;
+    background:black;
+    font-size:30px;
+}
+nav#app ul li, nav#app i{
+    color:white;
+}
+
+nav#app label {
+    margin-left:90%;
+}
+nav#app label:hover{
+    cursor:pointer;
+}
+
+nav#app ul li button{
+    border:none;
+    background:black;
+    color:white;
+    font-size:20px;
+}
+
+nav#app ul {
+    max-height:0px;
+    overflow:hidden;
+}
+
+nav#app ul li button:hover{
+    color:gray;
+}
+nav#app ul li{
+    margin-bottom:10px;
+}
+
+input[name="panel"]:checked ~ #listmenu{
+    max-height:400px;
+}
+
+@media (min-width:768px){
+    nav#app label{
+        display:none;
+    }
+
+    nav#app ul {
+        max-height:300px;
+        display:flex;
+        justify-content: space-evenly;
+    }
+}

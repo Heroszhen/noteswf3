@@ -1,0 +1,420 @@
+<div id="htmlcss">
+  <div id="menu">
+    <ul>
+      <li><a id="formateur" (click)="activeA('formateur')" [ngClass]="{'active': actived=='formateur'||actived==''}">Formateur</a></li>
+      <li><a id="creation" (click)="activeA('creation')" [ngClass]="{'active': actived=='creation'}">Création</a></li>
+      <li><a id="index" (click)="activeA('index')" [ngClass]="{'active': actived=='index'}">Index</a></li>
+      <li><a id="texte" (click)="activeA('texte')" [ngClass]="{'active': actived=='texte'}">Texte</a></li>
+      <li><a id="selector" (click)="activeA('selector')" [ngClass]="{'active': actived=='selector'}">Séléctors</a></li>
+      <li><a id="image" (click)="activeA('image')" [ngClass]="{'active': actived=='image'}">Images</a></li>
+      <li><a id="position" (click)="activeA('position')" [ngClass]="{'active': actived=='position'}">Positions</a></li>
+      <li><a id="structure" (click)="activeA('structure')" [ngClass]="{'active': actived=='structure'}">Structure</a></li>
+      <li><a id="zoning" (click)="activeA('zoning')" [ngClass]="{'active': actived=='zoning'}">Zoning</a></li>
+      <li><a id="list" (click)="activeA('list')" [ngClass]="{'active': actived=='list'}">Lists</a></li>
+      <li><a id="form" (click)="activeA('form')" [ngClass]="{'active': actived=='form'}">Forms</a></li>
+      <li><a id="menu" (click)="activeA('menu')" [ngClass]="{'active': actived=='menu'}">Menu</a></li>
+      <li><a id="animation" (click)="activeA('animation')" [ngClass]="{'active': actived=='animation'}">Animation</a></li>
+      <li><a id="tableau" (click)="activeA('tableau')" [ngClass]="{'active': actived=='tableau'}">Tableaux</a></li>
+      <li><a id="respoinsive" (click)="activeA('responsive')" [ngClass]="{'active': actived=='responsive'}">Résponsive</a></li>
+      <li><a id="menuh" (click)="activeA('menuh')" [ngClass]="{'active': actived=='menuh'}">Menu</a></li>
+    </ul>
+  </div>
+  <div id="contenu">
+	<section id="s1" [ngClass]="{'show': actived=='formateur' || actived==''}">
+		<h2>HTML/CSS</h2><br>
+		<br>
+		<p id="fp1">Formateur : Fahdi Nasri</p>
+		<div>
+			"On peut faire mieux que le bootstrap."
+			<p>--Fahdi Nasri</p>
+		</div>
+	</section>
+    <section id="s2" [ngClass]="{'show': actived=='creation'}">
+		<h2>Créer un site</h2><br>
+		<div class="container bggy">
+			<div class="container">
+				<p>1.Cahier des charges</p>
+				<p>2.Propositions commerciales(devis)</p>
+				<p>3.Validation</p>
+			</div>
+			<div class="container">
+				<p>4.Graphisme</p>
+				<p>5.Validation</p>
+				<p>6.Intégration</p>
+			</div>
+			<div class="container">
+				<p>7.Développement</p>
+				<p>8.Livraison</p>
+				<p>9.Hébergement</p>
+			</div>
+		</div>
+	</section>
+	<section id="s3" [ngClass]="{'show': actived=='index'}">
+		<h2>index.html</h2><br>
+		<div class="container bggy">
+			&lt;!DOCTYPE html&gt;<br>
+			&lt;html lang="fr"&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="description" content="Ma première page en html/css"&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link type="text/css" rel="stylesheet" href="css/style.css"&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title> Ma page d'accueil &lt;/title&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;header&gt;header&lt;/header&gt;<br>
+
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav&gt;nav&lt;/nav&gt;<br>
+
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;main&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;aside&gt;&lt;/aside&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;section&gt;<br>
+						   
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;&lt;/article&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;&lt;/div&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/main&gt;<br>
+
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;footer&gt;footer&lt;/footer&gt; <br>  
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+			&lt;/html&gt;<br>
+		</div>
+	</section>
+	<section id="s4" [ngClass]="{'show': actived=='texte'}">
+		<h2>Créer un site</h2><br>
+		<div class="container bggy">
+			<div>
+				<div class="s4cadre">
+					<a href="https://fr.lipsum.com/" target="_blank"><img src="http://www.ch-avranches-granville.fr/var/ptic/storage/images/media/images/lorem_ipsum_sticker-p217186123683068121q0ou_400/6158-1-fre-FR/lorem_ipsum_sticker-p217186123683068121q0ou_400_zoom_colorbox.jpg" alt=""></a>
+					<span>Lorem Ipsum</span><br>
+				</div>
+			</div>
+			<div>
+				<div class="s4cadre container2">
+					<a href="https://fontawesome.com/" target="_blank"><img src="https://www.drupal.org/files/project-images/font_awesome_logo.png" alt=""></a>
+					<span>Font Awesome</span><br>
+				</div>
+			</div>
+			<div>
+				<div class="s4cadre">
+					<a href="https://www.cssmatic.com/box-shadow" target="_blank"><img src="https://www.web4college.com/css-generator/css-box-shadow-generator.png" alt=""></a>
+					<span>Box shadow generator</span><br>
+				</div>
+			</div>
+			<div>
+				<div class="s4cadre">
+					<a href="https://meyerweb.com/eric/tools/css/reset/" target="_blank"><img src="http://res.cloudinary.com/time2hack/image/upload/css-reset.png" alt=""></a>
+					<span>Reset CSS</span><br>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="s5" [ngClass]="{'show': actived=='selector'}">
+		<h2>selector.html</h2><br>
+		<div class="container bggy">
+			<div>
+				&lt;div id="sel1"&gt;&lt;/div&gt;<br>
+				#sel1
+			</div>
+			<div>
+				&lt;div class="sel2"&gt;&lt;/div&gt;<br>
+				.sel2
+			</div>
+			<div>
+				&lt;input name="age"&gt;<br>
+				input[name='age']
+			</div>
+			<div>
+				<div>
+					&lt;div class="select"&gt;<br>
+					&nbsp;&nbsp;&nbsp;&lt;p&gt;text 1&lt;/p&gt;<br>
+					&nbsp;&nbsp;&nbsp;&lt;p&gt;text 2&lt;/p&gt;<br>
+					&nbsp;&nbsp;&nbsp;&lt;p&gt;text 3&lt;/p&gt;<br>
+					&lt;/div&gt;<br>
+					.select p:first-child , .select p:last-child , .select p:nth-child(even) , .select p:nth-child(odd) , .select p:nth-child(5)
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="s6" [ngClass]="{'show': actived=='image'}">
+		<h2>image.html</h2><br>
+		<div id="image" class="text-center bggy">
+			<div>
+				<img src="http://www.jc-paysage.fr/img/slides/jc-paysage-1.jpg" alt="">
+			</div>
+			<br><br>
+			<div class="text-right">
+				<h4>Achille</h4>
+			</div>
+		</div>
+	</section>
+	<section id="s7" [ngClass]="{'show': actived=='position'}">
+		<h2>positions.html</h2><br>
+		<div class="container bggy ">
+			<div>
+				<h4>fixed</h4>
+				L'élément se positionne par rapport au navigateur.
+			</div>
+			<div>
+				<h4>relative</h4>
+				L'élément se positionne par rapport à sa position initiale.
+			</div>
+			<div>
+				<h4>absolute</h4>
+				L'élément est superposé. 
+			</div>
+			<div>
+				<h4>flexbox</h4>
+				<a href="https://developer.mozilla.org/fr/docs/Web/CSS/flex" target="_blank">display:flex</a> , 
+				<a href="https://developer.mozilla.org/fr/docs/Web/CSS/flex-wrap" target="_blank">flex-wrap:wrap</a> , 
+				<a href="https://developer.mozilla.org/fr/docs/Web/CSS/align-items" target="_blank">align-items</a> , 
+				<a href="https://developer.mozilla.org/fr/docs/Web/CSS/justify-content" target="_blank">justify-content</a> , 
+				<a href="https://developer.mozilla.org/fr/docs/Web/CSS/align-content" target="_blank">align-content</a>
+			</div>
+		</div>
+	</section>
+	<section id="s8" [ngClass]="{'show': actived=='structure'}">
+		<h2>structure.html</h2><br>
+		<div class="container bggy ">
+			<div>
+				<h4>Référencement</h4>
+				meta et title sont 2 balises importantes pour que le moteur de google puisse trouver nos pages.
+			</div>
+			<div>
+				<h4>Balises sémentiques</h4>
+				header : bannière , logo , slogan<br>
+				nav : zone du menu<br>
+				main : contenu principal de la page<br>
+				section : zone du contenu, titre, texte etc<br>
+				article : zone du contenu<br>
+				footer : liens administratifs , copyright, cgu , cgv etc 
+			</div>
+		</div>
+	</section>
+	<section id="s9" [ngClass]="{'show': actived=='zoning'}">
+		<h2>zoning.html</h2><br>
+		<div class="container bggy">
+			<div>
+				<div id="container">
+					<header>
+						<div>haut1</div>
+						<div>haut2</div>
+						<div>haut3</div>
+					</header>
+					<nav><p>Menu</p></nav>
+					<main>
+						<div class="m1">Zone gauche</div>
+						<div class="m2">
+							<div class="a">A</div>
+							<div class="b">B</div>
+							<div class="sh">Slideshow</div>
+							<div class="md2">
+								<div class="c">C</div>
+								<div class="d">D</div>
+								<div class="e">E</div>
+								<div class="f">F</div>
+							</div>
+						</div>
+					</main>
+					<footer><p>Bas</p></footer>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="s10" [ngClass]="{'show': actived=='list'}">
+		<h2>listes.html</h2><br>
+		<div class="container bggy">
+			<div>
+				<h4>ul</h4>
+				Liste non ordonnée
+			</div>
+			<div>
+				<h4>ol</h4>
+				List ordonnée
+			</div>
+			<div>
+				<h4>li</h4>
+				Un élément d'une liste
+			</div>
+		</div>
+	</section>
+	<section id="s11" [ngClass]="{'show': actived=='form'}">
+		<h2>formulaire.html</h2><br>
+		<div class="container bggy">
+			<div>
+				<form method="post" action="" enctype="multipart/form-data">
+					<p>
+					<label for="lastname">Nom</label><br>
+					<input type="text" id="lastname" name="firstname" placeholder="nom" required>
+					</p>
+					<p>
+					<label for="email">Email</label><br>
+					<input type="text" id="email" name="email" placeholder="email" required>
+					</p>
+					<p>
+					<label for="m">Monsieur</label>
+					<input type="radio" id="m" name="sex" value="m" checked>
+					</p>
+					<p>
+					<label for="f">Madame</label>
+					<input type="radio" id="f" name="sex" value="f">
+					</p>
+					<p>
+					<label for="cv">CV</label><br>
+					<input type="file" id="cv" name="cv">
+					</p>
+
+					<p>
+					<label for="message">Message</label><br>
+					<textarea id="message" name="message" placeholder="Enter your message....."></textarea>
+					</p>
+					<br>
+					<p class="text-center">
+					<input type="submit" name="envoyer" value="Envoyer">
+					</p>
+				</form>
+			</div>
+			<div>
+			</div>
+		</div>
+	</section>
+	<section id="s12" [ngClass]="{'show': actived=='menu'}">
+		<h2>menus.html</h2><br>
+		<div class="container bggy ">
+			<div id="me1">
+				<nav id="mymenu">
+					<ul>
+						<li><a id="nav1" class="active" href="">menu</a></li>
+						<li><a id="nav2" href="">Text</a></li>
+						<li><a id="nav3" href="">Séléction</a></li>
+						<li><a id="nav4" href="">Image</a></li>
+						<li><a id="nav5" href="">Position</a></li>
+						<li><a id="nav6" href="">zoning</a></li>
+						<li><a id="nav7" href="">Tableau</a></li>
+						<li><a id="nav8" href="">Formulaire</a></li>
+						<li><a id="nav9" href="">Animation</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div id="me2">
+				 <div class="nav">
+					<a id="nav1" class="active" href="">Structure</a>
+					<a id="nav2" href="">Text</a>
+					<a id="nav3" href="">Séléction</a>
+					<a id="nav4" href="">Image</a>
+					<a id="nav5" href="">Position</a>
+					<a id="nav6" href="">zoning</a>
+					<a id="nav7" href="">Tableau</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="s13" [ngClass]="{'show': actived=='animation'}">
+		<h2>animation.html</h2><br>
+		<div class="container bggy">
+			<div class="text-center">
+				<ul class="imgeffets">
+                    <li><img src="https://fahdinasri.fr/cours_html_css/img/survol_img1.jpg" alt=""></li>
+                    <li><img src="https://fahdinasri.fr/cours_html_css/img/survol_img2.jpg" alt=""></li>
+                    <li><img src="https://fahdinasri.fr/cours_html_css/img/survol_img3.jpg" alt=""></li>
+                    <li><img src="https://fahdinasri.fr/cours_html_css/img/survol_img4.jpg" alt=""></li>
+                </ul>
+			</div>
+		</div>
+	</section>
+	<section id="s14" [ngClass]="{'show': actived=='tableau'}">
+		<h2>tableau.html</h2><br>
+		<div class="container bggy">
+			<div class="text-center">
+				<table>
+                    <caption>Vols Paradis/Enfer</caption>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>02/02/19</th>
+                            <th>03/02/19</th>
+                            <th>05/02/19</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th rowspan="2">Air Paradis</th>
+                            <td>Départ 10h - Arrivé 13h</td>
+                            <td>Départ 15h - Arrivé 18h</td>
+                            <td>Départ 17h - Arrivé 10h</td>
+                        </tr>
+                        <tr>
+                            <td>200euros</td>
+                            <td>240euros</td>
+                            <td>260euros</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <th rowspan="2">Air Enfer</th>
+                            <td>Départ 10h - Arrivé 13h</td>
+                            <td>Départ 15h - Arrivé 18h</td>
+                            <td>Départ 17h - Arrivé 10h</td>
+                        </tr>
+                        <tr>
+                            <td>200euros</td>
+                            <td>240euros</td>
+                            <td>260euros</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th></th>
+                            <th>02/02/19</th>
+                            <th>03/02/19</th>
+                            <th>05/02/19</th>
+                        </tr>
+                    </tfoot>
+                </table>
+			</div>
+		</div>
+	</section>
+	<section id="s15" [ngClass]="{'show': actived=='responsive'}">
+		<h2>responsive.html</h2><br>
+		<div class="bggy">
+			<div>
+				Un site web adaptatif (anglais RWD pour responsive web design, conception de sites web adaptatifs selon l'OQLF1) est un site web dont la conception vise, grâce à différents principes et techniques, à offrir une consultation confortable sur des écrans de tailles très différentes.
+			</div>
+			<br>
+			<div>
+				La @mediarègle est utilisée dans les requêtes des médias pour appliquer différents styles pour différents types médias / appareils.
+			</div>
+			<br>
+			<div class="text-center">
+				<div id="container">
+					<div>
+					</div>
+					<div>
+					</div>
+					<div>
+					</div>
+					<div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="s16" [ngClass]="{'show': actived=='menuh'}">
+		<h2>menu_hamburger.html</h2><br>
+		<div class="bggy">
+			<div>
+				<nav class="mainMenu">
+					<input type="checkbox" name="panel2" class="hidden" id="panel2">
+					<label for="panel2" class="menuTitle"></label>
+					<div class="clear"></div>
+					<ul class="menus16">
+						<li><a href="#">home</a></li>
+						<li><a href="#">about</a></li>
+						<li><a href="#">blog</a></li>
+						<li><a href="#">contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</section>
+  </div>
+</div>

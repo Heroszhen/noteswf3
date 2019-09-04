@@ -1,0 +1,86 @@
+<div id="poo">
+  <nav>
+    <i (click)="showbm()" [routerLink]="['/phppoo']" class="fas fa-home"></i>
+    <h2 class="text-center">POO en PHP</h2>
+  </nav>
+  <div id="content">
+    <div>
+      <div>
+        <h4>1. class</h4>
+        <p>
+            class User&#123;<br>
+              &nbsp;&nbsp;private $firstname = 'Zhen';<br>
+              &nbsp;&nbsp;private $lastname = 'Hero';<br>
+              &nbsp;&nbsp;private $age = 100;<br><br>
+
+              &nbsp;&nbsp;public function getFullname()&#123;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return $this->firstname." ".$this->lastname;<br>
+              &nbsp;&nbsp;&#125;<br><br>
+
+              &nbsp;&nbsp;public function setAge()&#123;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;$this->age++;<br>
+              &nbsp;&nbsp;&#125;<br>
+            &#125;<br><br>
+            $user = new User();<br>
+            echo $user->getFullname();
+        </p>
+      </div>
+
+      <div>
+        <h4>2. typage</h4>
+        <p>
+            class Person&#123;<br>
+              &nbsp;&nbsp;private $name;<br><br>
+
+              &nbsp;&nbsp;public function __construct(string $n)&#123;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;$this<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->setName($fi)<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;;<br>
+              &nbsp;&nbsp;&#125;<br><br>
+
+              &nbsp;&nbsp;/**<br>
+              &nbsp;&nbsp; * Get the value of firstname<br>
+              &nbsp;&nbsp; */ <br>
+              &nbsp;&nbsp; public function getFirstname():string<br>
+              &nbsp;&nbsp;&#123;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;return $this->firstname;<br>
+              &nbsp;&nbsp;&#125;<br><br>
+
+              &nbsp;&nbsp;/**<br>
+              &nbsp;&nbsp; * Set the value of firstname<br>
+              &nbsp;&nbsp;*<br>
+              &nbsp;&nbsp;* @return  self<br>
+              &nbsp;&nbsp;*/ <br>
+              &nbsp;&nbsp;public function setFirstname(string $firstname): Person<br>
+              &nbsp;&nbsp;&#123;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;$this->firstname = $firstname;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;return $this;<br>
+
+              &nbsp;&nbsp;&#125;<br>
+            &#125;<br><br>
+            $p = new Person("zhen");
+        </p>
+      </div>
+
+      <div>
+        <h4>3. constante et statique</h4>
+        <p>
+            class Commande&#123;<br>
+              &nbsp;&nbsp;const WEB = "wf3";<br>
+              &nbsp;&nbsp;public static $nbCommandes = 0;<br>
+              &nbsp;&nbsp;private status = 100;<br><br>
+
+              &nbsp;&nbsp;//constructeur<br>
+              &nbsp;&nbsp;public function __construct()&#123;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;//variable partagée par tous les objets de type Commande<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;this->$nbCommandes++;<br>
+              &nbsp;&nbsp;&#125;<br><br>
+              &nbsp;&nbsp;public function getWeb()&#123;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return self::web;<br>
+              &nbsp;&nbsp;&#125;<br>
+            &#125;
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

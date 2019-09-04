@@ -1,0 +1,561 @@
+<div id="js" (window:resize)="onResize($event)">
+  <header>
+      <a (click)="showbm()" [routerLink]="['/']"><h3>Accueil</h3></a>
+      <div>
+        <div><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank"><img src="http://royvankaathoven.nl/theme/main-v2/images/icon.javascript%202.png" alt=""></a></div>
+        <p><a href="https://jquery.com/" target="_blank">Jquery</a></p>
+        <p><a href="https://angular.io/" target="_blank">Angular</a></p>
+      </div>
+      <i (click)="menu()" class="fas fa-align-justify"></i>
+  </header>
+  <div id="content">
+    <nav>
+      <div id="menu">
+        <div><a (click)="changeActived('formateur')" [ngClass]="{'active': actived==''||actived=='formateur'}">FORMATEUR</a></div>
+        <div>
+          <a (click)="changeActived2('javascript')">JAVASCRIPT</a>
+          <ul [ngClass]="{'show': actived2=='javascript'}">
+            <li><a (click)="changeActived('basesjs')"  [ngClass]="{'active': actived=='basesjs'}">Bases</a></li>
+            <li><a (click)="changeActived('alp')"  [ngClass]="{'active': actived=='alp'}">Afficher une liste de photos</a></li>
+            <li><a (click)="changeActived('diaporama')"  [ngClass]="{'active': actived=='diaporama'}">Diaporama</a></li>
+          </ul>
+        </div>
+        <div>
+          <a (click)="changeActived2('jquery')">JQUERY</a>
+          <ul [ngClass]="{'show': actived2=='jquery'}">
+            <li><a (click)="changeActived('basesjq')"  [ngClass]="{'active': actived=='basesjq'}">Bases</a></li>
+            <li><a (click)="changeActived('compdeca')"  [ngClass]="{'active': actived=='compdeca'}">Compteur de caractère</a></li>
+            <li><a (click)="changeActived('menuaccordeon')"  [ngClass]="{'active': actived=='menuaccordeon'}">Menu accordeon</a></li>
+            <li><a (click)="changeActived('projetmovies')"  [ngClass]="{'active': actived=='projetmovies'}">Projet movies</a></li>
+          </ul>
+        </div>
+        <div>
+          <a (click)="changeActived('angular')"   [ngClass]="{'active': actived=='angular'}">ANGULAR</a>
+        </div>
+        <div>
+          <a (click)="changeActived('ionic')"   [ngClass]="{'active': actived=='ionic'}">IONIC</a>
+        </div>
+      </div>
+    </nav>
+    <div>
+      <section id="s1" [ngClass]="{'show': actived==''||actived=='formateur'}">
+        <h2 class="text-center">JAVASCRIPT</h2>
+        <br>
+        <p class="text-center">Formateur:Frederic LOSSIGNOL</p>
+        <br><br><br><br><br>
+        <div>
+          <div>
+            <img src="https://cdn.devdocs.io/images/icon-320.png" alt="" style="width:50px;height:50px;">
+            <p><a href="https://devdocs.io/" target="_blank">DevDocs</a></p>
+          </div>
+          <div>
+            <img src="https://super-monitoring.com/blog/wp-content/uploads/2016/11/jsfiddle.png" alt="" style="width:50px;height:50px;">
+            <p><a href="https://jsfiddle.net/" target="_blank">JSFiddle</a></p>
+          </div>
+          <div>
+            <p><a href="https://sharemycode.fr/" target="_blank">Sharemycode</a></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="s2" [ngClass]="{'show': actived=='basesjs'}">
+        <div>
+          <h2>Les objets</h2>
+          <div>
+            <p>Créer un objet</p>
+            <div class="myborder">
+              var user = &#123;<br>
+              &nbsp;&nbsp;&nbsp;firstname: "zhen",<br>
+              &nbsp;&nbsp;&nbsp;lastname: "hero",<br>
+              &nbsp;&nbsp;&nbsp;email: "abc@gmail.com",<br>
+              &nbsp;&nbsp;&nbsp;profilimg: "https://www.famousbirthdays.com/headshots/alexandra-daddario-9.jpg",<br>
+              &nbsp;&nbsp;&nbsp;followers: ["@js","@angular"]<br>
+              &#125;;
+            </div>
+            <br>
+            <p>Afficher email de user sur la console</p>
+            <div class="myborder">
+              console.log(user.email);
+            </div>
+          </div>
+        </div>
+
+          <div>
+            <h2>Les variables</h2>
+            <div>
+              <h4>Les types</h4>
+              string , nombre , boolearn etc
+            </div>
+            <div>
+              <p>Déclarations</p>
+              <div class="myborder">
+                var age = 3;<br>
+                var name = "Vicken";<br>
+                const  TAUX_TVA1 = 20;
+              </div>
+              <br>
+              <p>Saisir du texte dans une boît de dialogue</p>
+              <div class="myborder">
+                  window.prompt("Quel est le pays le plus beau");
+              </div>
+              <br>
+              <p>Les tableaux</p>
+              <div class="myborder">
+                  var mytab = [];<br>
+                  var jours = ["Dimanche" , "Lundi" , "Mardi" , "Mercredi" , "Jeudi" , "Vendredi" , "Samedi"]; 
+              </div>
+              <br>
+              <p>Pratique : </p>
+              <a href="https://jsfiddle.net/j5L60fpv/" target="_blank">Afficher le datetime au format français</a>
+            </div>
+          </div>
+
+          <div>
+            <h2>Les conditions</h2>
+            <div>
+              <h4>Egalité</h4>
+                1. ==<br>
+                a==b :  tester leurs valeurs.<br><br>
+                2. ===<br>
+                a===b : tester leurs valeurs et leurs types.
+            </div>
+            <div>
+              <h4>Opérateurs</h4>
+                1. &&<br>
+                a && b :  si a et b sont vrais, alors le test est vrai, sinon c'est faux.<br><br>
+                2. ||<br>
+                a || b : si l'un des deux est faux, le test est faux.
+            </div>
+            <div>
+              <h4>if...else...</h4>
+              <div class="myborder">
+                var name = "Vicken";<br>
+                if(name == "Vicken")alert("Salut "+name);<br>
+                else  alert("Bonjour "+name);
+              </div>
+            </div>
+            <div>
+                <h4>switch</h4>
+                <div class="myborder">
+                    var age = window.prompt("How old are you?");<br>
+                    age = parseInt(age);<br>
+                    switch(age)&#123;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;case 20:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write(20);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(20);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br><br>
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;case 30:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(30);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br><br>
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;default:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(age);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+                    &#125;
+                </div>
+              </div>    
+          </div>
+
+          <div>
+            <h2>Les boucles</h2>
+            <div>
+              <h4>fonctions des tableaux</h4>
+              1. array.push(var) : ajouter un élément à la fin<br>
+              2. array.includes(var) : tester si un élément est contenu dans le tableau<br>
+              3. array.filter(e => .....) : filtrer un tableau.<br>
+              4. array.length : renvoyer la longueur d'un tableau.
+              <br> 
+            </div>
+            <div>
+              <h4>while</h4>
+                <p>tester si la valeur entrée est un nombre</p>
+                <div class="myborder">
+                  var number = " ";<br>
+                  while(true)&#123;<br>
+                    &nbsp;&nbsp;number = parseFloat(window.prompt("input a number"));<br>
+                    &nbsp;&nbsp;if(isNaN(number)==false)break;<br>
+                  &#125;
+                </div>
+            </div>
+          </div>
+
+          <div>
+            <h2>Les fonctions</h2>
+            <div>
+              <div class="myborder">
+                function addition(e1,e2)&#123;<br>
+                    &nbsp;&nbsp;return e1+e2;<br>
+                  &#125;<br><br>
+                  var result = addition(3,4);<br>
+                  =>7
+                </div>
+              </div>
+          </div>
+
+          <div>
+              <h2>Les interactions</h2>
+              <div>
+                1. document.querySelector<br>
+                Retourner le premier élément trouvé au dom correspondant au sélécteur.<br><br>
+                2. element.addEventListener(event,function()&#123; &#125;);<br>
+                Poser un écouteur sur l'élément qui l'appelle, l'écouteur éxecute la fonction suivant l'événement passé en paramètre<br><br>
+                3. element.innerHTML<br>
+                Retourner ou modifier le contenu textuel de l'élément.<br><br>
+                4. element.classList<br>
+                1)ajouter une classe : element.classList.add();  <br>
+                2)supprimer une class : element.classList.remove(); <br>
+                3)ajout ou suppression :  element.classList.toggle();<br>
+                4)tester si une class existe :  element.classList.contains(); 
+              </div>
+            </div>
+
+            <div>
+                <h2>Le clavier</h2>
+                <div class="myborder">
+                  function monFonction(event)&#123;<br>
+                  &nbsp;&nbsp;var s  = event.keyCode;<br>
+                  &nbsp;&nbsp;console.log(s);<br>
+                  &nbsp;&nbsp;switch(s)&#123;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;case 37:<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("gogo");<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br><br>
+                              
+                  &nbsp;&nbsp;&nbsp;&nbsp;default:<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+                  &nbsp;&nbsp;&#125;<br>
+                  &#125;
+                </div>
+              </div>
+      </section>
+      <section id="s3" [ngClass]="{'show': actived=='alp'}">
+			<div>
+				<img src="assets/images/selecteurdephotos.png" alt="">
+			</div>
+        <a href="https://jsfiddle.net/mgftq9bc/" target="_blank">Démo</a>
+      </section>
+      <section id="s4" [ngClass]="{'show': actived=='diaporama'}">
+			<div>
+				<img src="assets/images/diaporama.png" alt="">
+			</div>
+          <a href="https://jsfiddle.net/5xmp1ydg/" target="_blank">Démo</a>
+        </section>
+        
+        <section id="s5" [ngClass]="{'show': actived=='basesjq'}">
+			<div>
+				<h2>Les sélécteurs</h2>
+				<div>
+					<p>
+						<a href="https://developers.google.com/speed/libraries/#jquery" target="_blank">Google CDN</a>
+					</p>
+					<div class="myborder">
+						&lt;div id="div1"&gt;&lt;/div&gt;<br>
+						$("#div1");<br><br>
+						
+						&lt;div class="div2"&gt;&lt;/div&gt;<br>
+						$(".div2");<br><br>
+						
+						&lt;div id="div3"&gt;&lt;input name="age"&gt;&lt;/div&gt;<br>
+						$("#div3 input");<br><br>
+						
+						&lt;ul id="ul1"&gt;<br>
+							&nbsp;&nbsp;&lt;li&gt;1&lt;/li&gt;<br>
+							&nbsp;&nbsp;&lt;li&gt;2&lt;/li&gt;<br>
+						&lt;/ul&gt;<br>
+						$("ul1 li"); //toutes les li de ul ayant id="ul1" sont séléctionnées
+					</div>
+				</div>
+			</div>
+			<br>
+					
+			<div>
+				<h2>Class</h2>
+				1.Ajouter une classe<br>
+				element.addClass("danger");<br>
+				2.Supprimer une classe<br>
+				element.removeClass();<br>
+				3.Ajouter ou Supprimer<br>
+				element.toggleClass()<br>
+				4.Tester l'existance d'une class<br>
+				element.hasClass();
+				<div class="myborder">
+					&lt;div id="div1"&gt;test&lt;/div&gt;<br>
+					//poser un écouteur sur la div ayant id=div1<br>
+					$("#div1").click(function()&#123;<br>
+						&nbsp;&nbsp;$(this).toggleClass("red");<br>
+					&#125;);<br>
+				</div>
+			</div>
+			<br>
+					
+			<div>
+				<h2>Les séléctions</h2>
+				1.first() trouve le premier élément correspondant au sélécteur dans le dom.<br>
+				2.eq(n) sélectionne un élément ayant un numéro d'index spécifique.<br>
+				3.last() trouve le dernier élément correspondant au sélécteur dans le dom.<br>
+				4.children() renvoie tous les éléments qui sont les enfants directs.<br>
+				5.find () renvoie les descendants des éléments de l'élément sélectionné.<br>
+				6.prev() renvoie l'élément suivant de l'élément sélectionné.<br>
+				7.next() renvoie l'élément précédent de l'élément sélectionné.<br>
+				8.siblings() sélectionne tous les éléments qui sont frères et sœurs du « élément » spécifié.<br>
+				9.non () retourne des éléments qui ne correspondent pas à certains critères.
+			</div>
+				
+			<div>
+				<h2>La gestion de form</h2>
+				<div class="myborder">
+					&lt;form action="" id="fm"&gt;<br>
+						&nbsp;&nbsp;&nbsp;&lt;input name="firstname" type="text"&gt;<br>
+						&nbsp;&nbsp;&nbsp;&lt;p class="error"&gt;&lt;/p&gt;<br>
+						&nbsp;&nbsp;&nbsp;&lt;select name="region"&gt;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="0"&gt;Veuillez séléctionner un choix&lt;/option&gt;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="idf"&gt;Ile de France&lt;/option&gt;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="paca"&gt;PACA&lt;/option&gt;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="aqt"&gt;Aquitaine&lt;/option&gt;<br>
+						&nbsp;&nbsp;&nbsp;&lt;/select&gt;<br>
+						&nbsp;&nbsp;&nbsp;&lt;textarea name="message"&gt;&lt;/textarea&gt;<br>
+						
+						&nbsp;&nbsp;&nbsp;&lt;button type="submit"&gt;Envoyer&lt;/button&gt;<br>
+					&lt;/form&gt;<br><br>
+					
+					$('form#fm').on('submit',function(e)&#123;<br>
+						&nbsp;&nbsp;&nbsp;e.preventDefault();<br>
+						&nbsp;&nbsp;&nbsp;var input = $('input').val();<br>
+						&nbsp;&nbsp;&nbsp;var select = $("select[name=region]").val();<br>
+						&nbsp;&nbsp;&nbsp;var textarea = $('textarea').val();<br>
+						&nbsp;&nbsp;&nbsp;console.log(input);<br>
+						&nbsp;&nbsp;&nbsp;console.log(select);<br>
+						&nbsp;&nbsp;&nbsp;console.log(textarea);<br>
+						
+						&nbsp;&nbsp;&nbsp;//règle de validation : 2 caractères minimums<br>
+						&nbsp;&nbsp;&nbsp;if(input.length < 2) &#123;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$("p.error").html("&lt;span class='red'&gt;2 caractères minimums&lt;/span&gt;");<br>
+						&nbsp;&nbsp;&nbsp;&#125;else&#123;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$("p.error").empty();<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.querySelector("form").reset();<br>
+						&nbsp;&nbsp;&nbsp;&#125;<br>
+					&#125;)
+				</div>
+			</div>
+			
+			<div>
+				<h2>class</h2>
+				<div class="myborder">
+					class Person&#123;<br>
+						&nbsp;&nbsp;&nbsp;constructor (na,statu)&#123;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.name = na;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.statu = statu;<br>
+						&nbsp;&nbsp;&nbsp;&#125;<br><br>
+						
+						&nbsp;&nbsp;&nbsp;who()&#123;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return this.name+" is "+this.statu;<br>
+						&nbsp;&nbsp;&nbsp;&#125;<br>
+					&#125;<br><br>
+
+					var p = new Person("zhen" , "the biggest hero in the world");<br>
+					var r = p.who();<br>
+					====>zhen is the biggest hero in the world
+				</div>
+			</div>
+        </section>
+        <section id="s6" [ngClass]="{'show': actived=='compdeca'}">
+			<div>
+				<img src="assets/images/compterdeca.png" alt="">
+			</div>
+			<a href="https://jsfiddle.net/p15fLz6g/" target="_blank">Démo</a>
+		</section>
+		<section id="s7" [ngClass]="{'show': actived=='menuaccordeon'}">
+			<div>
+				<img src="assets/images/menuaccordeon.png" alt="">
+			</div>
+			<a href="https://jsfiddle.net/742bdjnm/" target="_blank">Démo</a>
+		</section>
+		<section id="s7" [ngClass]="{'show': actived=='projetmovies'}">
+			<a href="https://jsfiddle.net/cf6a19gL/" target="_blank">Démo</a>
+			<div>
+				<img src="assets/images/projetmovie1.png" alt=""><br>
+				<img src="assets/images/projetmovie2.png" alt="">
+			</div>
+		</section>
+		
+		<section id="s8" [ngClass]="{'show': actived=='angular'}">
+			<h2>
+				<span class="ared">Angular</span> <a href="https://stackblitz.com/" target="_blank"> online</a>
+			</h2>
+			<br>
+			
+			<div>
+				<h3>Installation</h3>
+				<div>
+					Il faut installer le nodejs au préalable.<br>
+					url : http://localhost:4200/
+				</div>
+			</div>
+			
+			<div>
+				<h3>Les composants</h3>
+				Un composant Angular est un bout d’interface d'applications.
+				<div class="acommand">
+					ng generate component mycomponent
+				</div>
+			</div>
+			
+			<div>
+				<h3>Les variables</h3>
+				<div class="myborder">
+					<div>
+						.ts:<br>
+						name="zhen";<br>
+						.html:<br>
+						&#123;&nbsp;&#123; name &#125;&nbsp;&#125;
+					</div>
+					<br>
+					<div>
+						.ts:<br>
+						chat="bbb.jpg";<br>
+						.html:<br>
+						&lt;img [src]="chat"&gt;
+					</div>
+					<br>
+					<div>
+						.ts:<br>
+						f1()&#123;......&#125;<br>
+						.html:<br>
+						&lt;button (click)="f1"&gt;&lt;/button&gt;
+					</div>
+				</div>
+			</div>
+			
+			<div>
+				<h3>Les directives</h3>
+				1. *ngFor :  afficher des listes en html.<br>
+				2. *ngIf :  afficher sous une condition des éléments en html.<br>
+				3. [(ngmodel)] : transmettre des valeurs dans les 2 sens.<br>
+				4. <a href="https://angular.io/api?type=pipe" target="_blank">pipe</a> : &#123;&nbsp;&#123;title|uppcase&#125;&nbsp;&#125;
+			</div>
+			
+			<div>
+				<h3>@Input()</h3>
+				Transmettre des données du composant père au composant fils.
+				<div class="myborder">
+					père.ts:<br>
+					perev;<br><br>
+
+					père.html:<br>
+					&lt;app-fils [filsv]='perev'&gt;&lt;/app-fils&gt;<br><br>
+
+					fils.ts:<br>
+					import &#123; Input &#125; from '@angular/core';<br>
+					@Input() filsv; //décorateur qui reçoit la valeur
+				</div>
+			</div>
+			
+			<div>
+				<h3>@Output()</h3>
+				Transmettre des données du composant fils au composant père.
+				<div class="myborder">
+					père.html:<br>
+					&lt;app-fils (pickEvent)="retrieve($event)"&gt;&lt;/app-fils&gt;<br><br>
+
+					père.ts:<br>
+					retrieve(e)&#123;<br>
+						&nbsp;&nbsp;&nbsp;console.log(e); //reçoit des données du fils<br>
+					&#125;<br><br>
+
+					fils.html<br>
+					&lt;div (click)="getContact(contact)"&gt;&lt;/div&gt;<br><br>
+
+					fils.ts:<br>
+					import &#123; Output,EventEmitter &#125; from '@angular/core';<br>
+					@Output() pickEvent = new EventEmitter;<br>
+					getContact(c)&#123;<br>
+						&nbsp;&nbsp;&nbsp;this.pickEvent.emit(c);<br>
+					&#125;
+				</div>
+			</div>
+			
+			<div>
+				<h3>Les services</h3>
+				Mettre des fonctionnalités communes ,utilisées dans les composants,<br>
+				<div class="acommand">
+					ng generate service nom
+				</div>
+				<div class="myborder">
+					app.module.ts:<br>
+					import &#123;HeroService&#125; from './myservices/hero.service';<br>
+					HeroService dans providers<br><br>
+
+					A.service.ts:<br>
+					import &#123;HeroService&#125; from './myservices/hero.service';<br>
+					constructor(private s:HeroService)&#123;&#125;
+				</div>
+			</div>
+			
+			<div>
+				<h3>HttpClient</h3>
+				Permettre de créer et d'exécuter des appels HTTP (fait par AJAX - Asynchronous JavaScript and XML) et de réagir aux informations retournées par le serveur.
+				<div class="myborder">
+					app.module.ts:<br>
+					import &#123; HttpClientModule &#125; from '@angular/common/http';<br>
+					HttpClientModule dans imports<br><br>
+
+					A.ts:<br>
+					import &#123; HttpClient &#125; from '@angular/common/http';<br>
+					constructor(private http:HttpClient) &#123;&#125;<br>
+					this.http.get/post.....et //soumettre des données<br>
+					subscribe(data=>&#123; &#125;); //traîter les données reçues
+				</div>
+			</div>
+			
+			<div>
+				<h3>RouterLink</h3>
+				Au lieu de charger une nouvelle page à chaque clic ou à chaque changement d'URL, on remplace le contenu ou une partie du contenu de la page : on modifie les components qui y sont affichés, ou le contenu de ces components. 
+				<div class="myborder">
+					app.module.ts:<br>
+					import &#123; AppRoutingModule &#125; from './app-routing.module';<br>
+					AppRoutingModule dans imports<br><br>
+							
+					dans app.component.html:<br>
+					&lt;router-outlet&gt;&lt;/router-outlet&gt;<br><br>
+							
+					dans app-routing.module.ts<br>
+					import &#123; AComponent &#125; from './a/a.component';<br>
+					import &#123; BComponent &#125; from './b/b.component';<br>
+					const routes: Routes = [<br>
+					&nbsp;&nbsp;&nbsp;&#123;path:'',component:AComponent&#125;<br>
+					&nbsp;&nbsp;&nbsp;&#123;path:'bb',component:BComponent&#125;<br>
+					];<br>
+					//path:''->page d'accueil, path:'**'->page par défaut lors des érreurs<br><br>
+							
+					A.html:<br>
+					&lt;button routerLink="/bb"&gt;Ajoute&lt;/button&gt;<br><br>
+							
+					A.ts:<br>
+					import &#123; Router &#125; from '@angular/router';<br>
+					constructor(private router:Router)&#123;&#125;<br>
+					this.router.navigate(['/....']);
+				</div> 
+			</div>
+			
+			<div>
+				<h3>BehaviorSubject</h3>
+				Un BehaviorSubject a obligatoirement une valeur par défaut. Il sauvegarde la dernière valeur qu'il a émie et l'envoie aux observateurs lors de leur subscribe. 
+				<div class="myborder">
+					A.ts:<br>
+					import &#123; BehaviorSubject &#125; from 'rxjs';<br>
+					courant$ = new BehaviorSubject([]);<br><br>
+					courant$.next(...); //ajouter une valeur<br>
+					courant$.subscribe(data=>&#123;......&#125;); //récupérer la valeur à l'écoute.<br>
+					courant$.getValeur(); //récupérer la valeur actuelle
+				</div>
+			</div>
+		</section>
+		
+		<section id="s9" [ngClass]="{'show': actived=='ionic'}">
+			<div>
+				En construction...
+			</div>
+		</section>
+    </div>
+  </div>
+</div>

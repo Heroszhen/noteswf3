@@ -1,0 +1,19 @@
+#singup .container{
+    margin:0 auto;
+    margin-top:50px;
+    width:50%; 
+    font-size:30px;
+}
+#singup .container input{
+    width:95%;
+    margin-bottom:20px;
+    border-radius:5px;
+}
+#singup .container p.text-danger{
+    margin-top:20px;
+    color:red;
+}
+#singup .container button{
+    background-color:blue;
+    border-radius:20px;
+}

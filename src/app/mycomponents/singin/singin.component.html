@@ -1,0 +1,19 @@
+<div id="singin">
+    <div class="container">
+        <div id="con">
+          <h2 class="text-center">Connectez-vous</h2><br><br>
+          <form [formGroup]="signInForm" (ngSubmit)="connexion()">
+            <div class="form-group">
+              <label for="emailc">Adresse mail</label>
+              <input type="text" id="emailc" class="form-control" formControlName="emailc">
+            </div>
+            <div class="form-group">
+              <label for="passwordc">Mot de passe</label>
+              <input type="password" id="passwordc" class="form-control" formControlName="passwordc">
+            </div>
+            <button class="btn btn-primary" type="submit">Se connecter</button>
+          </form>
+          <p class="text-danger">{{ errorMessage }}</p>
+        </div>
+      </div>
+</div>

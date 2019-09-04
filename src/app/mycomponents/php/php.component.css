@@ -1,0 +1,98 @@
+#php{
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 25px;
+}
+
+#php nav {
+	position:absolute;
+	z-index:2;
+	position:fixed;
+	top:0px;
+	width:100%;
+}
+#php nav a{
+	color:rgb(220,220,220);
+}
+
+#php nav a:hover {
+	color:white;
+}
+#php nav a.active{
+	color:white;
+}
+#php nav a span{
+	color:black;
+	font-style:italic;
+	font-size:25px;
+}
+
+#php nav>div:nth-child(1){
+	background:rgb(136,146,191);
+}
+#php nav>div:nth-child(1) div{
+	margin-left:100px;
+	height:52px;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	width:40%;
+}
+#php nav>div:nth-child(2){
+	background:rgb(79,91,147);
+	height:3px;
+}
+
+#php>div{
+	margin-top:55px;
+}
+#php>div section{
+	display:none;
+}
+#php>div section.show{
+	display:block;
+}
+
+#php>div section .content{
+	background:rgb(51,51,51);
+	padding-top:50px;
+	padding-bottom:80px;
+	display:flex;
+	justify-content: center;
+}
+
+#php>div section .content>div{
+	min-height:100vh;
+	width:70%;
+	background:rgb(242,242,242);
+	padding:20px;
+}
+
+#php>div section .content h3.title{
+	color:rgb(121,56,98);
+}
+
+#php>div section .content .title{
+	color:rgb(121,56,98);
+	border-bottom:1px dotted black;
+	padding-bottom:5px;
+	margin-bottom:20px;
+}
+
+#php>div section .content p{
+	margin-bottom:10px;
+}
+
+@media (max-width:576px){
+	#php nav>div:nth-child(1) div{
+		margin-left:10px;
+		width:85%;
+	}
+
+	#php>div section .content>div{
+		width:80%;
+		
+	}
+	#php>div section .content #pdo{
+		font-size:15px;
+	}
+}

@@ -1,0 +1,239 @@
+#js{
+    background:rgb(240,240,240);
+    box-sizing: border-box;
+    font-size:25px;
+    min-height:95vh;
+}
+
+#js header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgb(25,118,210);
+    padding-top:10px;
+    padding-bottom:10px;
+    display:flex;
+    align-items: center;
+}
+
+#js header>a{
+    margin-left:5px;
+    width:18%;
+}
+
+#js header>i.fa-align-justify{
+    width:10%;
+    text-align: right;
+    margin-right:5px;
+    display:none;
+}
+
+#js header>div{
+    width:74%;
+    display:flex;
+    align-items: center;
+    height:40px;
+}
+
+#js header>div img{
+   width:40px;
+   margin-right:20px;
+   transition:1s;
+}
+
+#js header>div img:hover{
+    transform:rotate(-360deg);
+ }
+
+#js header>div p{
+    font-size:17px;
+    margin-right:8px;
+ }
+
+ #js header>div p a:hover{
+    color:gray;
+ }
+
+#js header a,#js header p,#header h2{
+    color:white;
+}
+
+#content {
+    display:flex;
+    margin-top:60px;
+}
+
+#content nav{
+    position:fixed;
+    width:260px;
+    height:968px;
+}
+
+#content nav #menu{
+    width:99%;
+    height:968px;
+    background:white;
+    box-shadow: 6px 4px 21px -7px rgba(0,0,0,0.75);
+    overflow:auto;
+    box-sizing: border-box;
+    padding:10px;
+}
+
+#content nav #menu>div{
+    margin-bottom:5px;
+}
+
+#content nav #menu a{
+    display:block;
+    width:220px;
+    padding:5px;
+    color:gray;
+}
+#content nav #menu a:hover{
+    background:rgb(220,220,220);
+     color:rgb(0,139,255);
+}
+
+#content nav #menu  a.active{
+	border:1px solid rgb(0,139,255) !important;
+	color:rgb(0,139,255) !important;
+	background:rgb(220,220,220) !important;
+}
+
+#content nav #menu  li.active{
+	border:1px solid rgb(0,139,255) !important;
+	color:rgb(0,139,255) !important;
+	background:rgb(220,220,220) !important;
+}
+#content nav #menu ul {
+    margin-left:10px;
+    display:none;
+}
+
+#content nav #menu ul li a{
+    font-size:17px;
+}
+
+#content >div{
+    margin-left:260px;
+    box-sizing: border-box;
+    padding:25px;
+    min-height:740px;
+    width:100% !important;
+    line-height:27px;
+}
+
+#content .container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content>div section{
+	display:none;
+}
+
+#content nav #menu ul.show , #content>div section.show{
+	display:block;
+}
+
+#content section#s1>div{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#content section#s1>div>div{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:60px;
+    width:200px;
+    border:2px solid black;
+    border-radius:20px;
+}
+
+#content section#s1>div>div img{
+    margin-right:5px;
+}
+
+#content section h2{
+    margin-bottom:20px;
+}
+#content section h4{
+    margin-bottom:10px;
+}
+
+#content section>div{
+    margin-bottom:50px;
+}
+#content section>div>div{
+    margin-bottom:30px;
+}
+
+.myborder{
+    border:1px solid black;
+    border-radius:10px;
+    padding:10px;
+    font-family: sans-serif;
+    margin-top:5px;
+    background:white;
+    font-size:18px;
+}
+#js #s8{
+	font-family: Arial, Helvetica, sans-serif;
+	line-height:30px;
+	font-size:20px;
+}
+
+#js #s8 .ared{
+	color:rgb(226,50,55);
+}
+
+#js #s8 .acommand{
+	background-color:rgb(51,51,51);
+	color:rgb(30,255,11);
+	border-radius:10px;
+	padding:10px;
+	font-size:17px;
+}
+#js #s9 div{
+	height:500px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	font-size:40px;
+}
+
+
+@media (max-width:769px){
+    #js header>i.fa-align-justify{
+        display:block;
+    }
+    #js header>a h3{
+        font-size:18px;
+    }
+    #js #content nav{
+        width:100%;
+        background:rgb(0,0,0,0.6);
+        display:none;
+    }
+    #js #content nav #menu{
+        width:70%;
+    }
+
+    #js #content >div{
+        width:100%;
+        margin-left:0;
+    }
+    #content section#s1>div>div{
+        width:100%;
+        margin-bottom:10px;
+    }
+}
+
+@media (max-width:415px){
+    .myborder{
+        font-size:17px;
+    }
+}

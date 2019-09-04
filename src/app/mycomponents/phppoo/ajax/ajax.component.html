@@ -1,0 +1,214 @@
+<div id="ajax">
+	<header>
+		<div>
+			<i (click)="showbm()" [routerLink]="['/phppoo']" class="fas fa-arrow-left"></i>
+		</div>
+		<div>
+			<h2><a (click)="nav2()">AJAX</a></h2>
+		</div>
+		<div>
+			<i (click)="nav()" class="fas fa-align-justify"></i>
+		</div>
+	</header>
+	<div id="content">
+		<nav>
+			<ul>
+				<li class="title" [ngClass]="{'active': actived=='definition'||actived==''}"><a (click)="activeA('definition')">Définition</a></li>
+			</ul>
+			<ul>
+				<li class="title">En JS</li>
+				<li>
+					<ul>
+						<li [ngClass]="{'active': actived=='getjs'}"><a (click)="activeA('getjs')">GET</a></li>
+						<li [ngClass]="{'active': actived=='postjs'}"><a (click)="activeA('postjs')">POST</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul>
+				<li class="title">En JQUERY</li>
+				<li>
+					<ul>
+						<li [ngClass]="{'active': actived=='getjq'}"><a (click)="activeA('getjq')">GET</a></li>
+						<li [ngClass]="{'active': actived=='postjq'}"><a (click)="activeA('postjq')">POST</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul>
+				<li class="title"  [ngClass]="{'active': actived=='chat'}"><a (click)="activeA('chat')">Chat</a></li>
+			</ul>
+		</nav>
+		<div>
+			<section [ngClass]="{'show': actived=='definition'||actived==''}">
+				<img src="https://udemy-images.udemy.com/course/750x422/597442_1b1f_4.jpg" alt="">
+				<br><br><br>
+				<p>
+					AJAX = Asynchronous JavaScript et XML.<br>
+
+					AJAX est une technique pour créer des pages web rapides et dynamiques.<br>
+
+					AJAX permet aux pages web d'être mises à jour de manière asynchrone en échangeant de petites quantités de données avec le serveur dans les coulisses. Cela signifie qu'il est possible de mettre à jour les parties d'une page web, sans recharger la page.<br>
+
+					Les pages web classiques qui n'utilisent pas AJAX doivent recharger la page entière si le contenu doit changer.<br>
+
+					Exemples d'applications utilisant AJAX: Google Maps, Gmail, Youtube et onglets Facebook.<br>
+				</p>
+			</section>
+			<section [ngClass]="{'show': actived=='getjs'}">
+				<h4 class="text-center">POST en JS</h4>
+				<br>
+				&lt;body&gt;<br>
+				&nbsp;&nbsp;&nbsp;&lt;div id="reponse"&gt;&lt;/div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&lt;form id="qui"&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="prenom"&gt;Prénom&lt;/label&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" id="prenom"&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="nom">Nom&lt;/label&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" id="nom"&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="submit">Envoyer&lt;/button&gt;<br>
+				&nbsp;&nbsp;&nbsp;&lt;/form&gt;<br>
+				&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('qui').addEventListener('submit',function(e)&#123;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//annuler la soumission du formulaire<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.preventDefault();<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var prenom = document.getElementById('prenom').value;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var nom = document.getElementById('nom').value;<br><br>
+							
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//instanciation de l'objet qui permet de faire la requête en js<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var xhttp = window.XMLHttpRequest ? new XMLHttpRequest() :(window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHTTP") : '');<br><br>
+							
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//on définit ce qui va être fait après l'appel AJAX<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xhttp.onreadystatechange = function()&#123;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(xhttp.readyState == 4 && xhttp.status ==200)&#123;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('reponse').innerHTML = xhttp.responseText;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;<br>
+							
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xhttp.open('GET','../hello.php?prenom='+prenom+'&nom='+nom);<br>
+							
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xhttp.send();<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;)<br>
+				&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+				&lt;/body&gt;<br>
+			</section>
+			<section [ngClass]="{'show': actived=='postjs'}">
+				<h4 class="text-center">GET en JS</h4>
+				<br>
+				&lt;body&gt;<br>
+				&nbsp;&nbsp;&nbsp;&lt;div id="reponse"&gt;&lt;/div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&lt;form id="qui"&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="prenom"&gt;Prénom&lt;/label&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" id="prenom"&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="nom">Nom&lt;/label&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" id="nom"&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="submit">Envoyer&lt;/button&gt;<br>
+				&nbsp;&nbsp;&nbsp;&lt;/form&gt;<br>
+				&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('qui').addEventListener('submit',function(e)&#123;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//annuler la soumission du formulaire<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.preventDefault();<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var prenom = document.getElementById('prenom').value;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var nom = document.getElementById('nom').value;<br><br>
+							
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//instanciation de l'objet qui permet de faire la requête en js<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var xhttp = window.XMLHttpRequest ? new XMLHttpRequest() :(window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHTTP") : '');<br><br>
+							
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//on définit ce qui va être fait après l'appel AJAX<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xhttp.onreadystatechange = function()&#123;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(xhttp.readyState == 4 && xhttp.status ==200)&#123;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('reponse').innerHTML = xhttp.responseText;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;<br><br>
+							
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xhttp.open('POST','../hello.php');<br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//on ajoute un entête HTTP pour signifier qu'il y a des données dans post
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xhttp.setRequestHeader(<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Content-type',<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'application/x-www-form-urlencoded'<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br><br>	
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xhttp.send('prenom='+prenom+'&nom='+nom);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;)<br>
+				&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+				&lt;/body&gt;<br>
+			</section>
+			<section [ngClass]="{'show': actived=='getjq'}">
+				<h4 class="text-center">GET en jquery</h4>
+				<br>
+				&lt;body&gt;<br>
+				&nbsp;&nbsp;&nbsp;&lt;div id="reponse"&gt;&lt;/div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&lt;form id="qui"&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="prenom"&gt;Prénom&lt;/label&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" id="prenom"&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="nom">Nom&lt;/label&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" id="nom"&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="submit">Envoyer&lt;/button&gt;<br>
+				&nbsp;&nbsp;&nbsp;&lt;/form&gt;<br>
+				&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(function()&#123;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#qui').submit(function(e)&#123;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.preventDefault();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$.get(<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'../hello-json.php',<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(this).serialize(),<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function(response)&#123;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#reponse').html(response.result);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;,<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'json'//le format de réponses reçues<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;);<br>
+				&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+				&lt;/body&gt;<br>
+			</section>
+			<section [ngClass]="{'show': actived=='postjq'}">
+				<h4 class="text-center">POST en jquery</h4>
+				<br>
+				&lt;body&gt;<br>
+				&nbsp;&nbsp;&nbsp;&lt;div id="reponse"&gt;&lt;/div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&lt;form id="qui"&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="prenom"&gt;Prénom&lt;/label&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" id="prenom"&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="nom">Nom&lt;/label&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" id="nom"&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="submit">Envoyer&lt;/button&gt;<br>
+				&nbsp;&nbsp;&nbsp;&lt;/form&gt;<br>
+				&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(function()&#123;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#qui').submit(function(e)&#123;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.preventDefault();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$.post(<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'../hello-json.php',<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(this).serialize(),<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function(response)&#123;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#reponse').html(response.result);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;,<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'json'//le format de réponses reçues<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;);<br>
+				&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+				&lt;/body&gt;<br>
+			</section>
+			<section [ngClass]="{'show': actived=='chat'}">
+				<h4 class="text-center">Chat</h4>
+				<br>
+				<img src="assets/images/chat.png" alt="">
+				<br><br>
+			</section>
+		</div>
+	</div>
+</div>
